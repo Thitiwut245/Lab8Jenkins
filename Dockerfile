@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     chromium chromium-driver \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir robotframework --break-system-packages \
- && pip3 install --no-cache-dir selenium robotframework-seleniumlibrary --break-system-packages
+RUN pip3 install --no-cache-dir --break-system-packages \
+    robotframework selenium robotframework-seleniumlibrary
 
 USER jenkins

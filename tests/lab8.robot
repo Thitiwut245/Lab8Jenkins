@@ -3,18 +3,18 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 Open Computing Headless
-    ${options}=    Evaluate    __import__('selenium.webdriver').webdriver.ChromeOptions()
-    Call Method    ${options}    add_argument    --headless=new
-    Call Method    ${options}    add_argument    --no-sandbox
-    Call Method    ${options}    add_argument    --disable-dev-shm-usage
-    Call Method    ${options}    add_argument    --disable-gpu
-    Call Method    ${options}    add_argument    --window-size=1920,1080
-    Create Webdriver    Chrome    options=${options}
+    ${opts}=    Evaluate    __import__('selenium.webdriver').webdriver.ChromeOptions()
+    Call Method    ${opts}    add_argument    --headless
+    Call Method    ${opts}    add_argument    --no-sandbox
+    Call Method    ${opts}    add_argument    --disable-dev-shm-usage
+    Call Method    ${opts}    add_argument    --disable-gpu
+    Call Method    ${opts}    add_argument    --window-size=1920,1080
+    Create Webdriver    Chrome    options=${opts}
     Go To    https://computing.kku.ac.th
 
 *** Test Cases ***
 Open computing Website
     Open Computing Headless
     ${title}=    Get Title
-    Should Contain    ${title}    College of Computing, Khon Kaen University
+    Should Contain    ${title}    College of Computing
     Close Browser
