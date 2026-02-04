@@ -5,6 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 python3-pip git ca-certificates chromium \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install --no-cache-dir robotframework robotframework-seleniumlibrary --break-system-packages
+RUN pip3 install --no-cache-dir robotframework --break-system-packages \
+ && pip3 install --no-cache-dir robotframework-seleniumlibrary selenium --break-system-packages
 
 USER jenkins
