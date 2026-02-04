@@ -13,8 +13,8 @@ Open Browser To Login Page
 
 
 *** Test Cases ***
-Open CoC Website
-    Open Browser    https://coc.kku.ac.th/    chrome
+Open computing Website
+    Open Browser    https://computing.kku.ac.th   chrome
     ${title}=    Get Title
     Should Contain    ${title}    College of Computing, Khon Kaen University
     Close Browser
