@@ -14,6 +14,7 @@ Open Browser To Login Page
 
 *** Test Cases ***
 Open CoC Website
-    Open Browser To Login Page
-    Title Should Contain    College of Computing, Khon Kaen University
-    [Teardown]    Close Browser
+    Open Browser    https://coc.kku.ac.th/    chrome
+    ${title}=    Get Title
+    Should Contain    ${title}    College of Computing, Khon Kaen University
+    Close Browser
