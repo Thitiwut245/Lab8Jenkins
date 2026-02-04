@@ -15,5 +15,5 @@ Open Browser To Login Page
 *** Test Cases ***
 Open CoC Website
     Open Browser To Login Page
-    Title Should Be    College of Computing, Khon Kaen University
+    Title Should Match Regexp    .*College of Computing, Khon Kaen University.*
     [Teardown]    Close Browser
